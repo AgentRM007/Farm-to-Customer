@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login - FreshFarm Direct</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Add some specific styles for login page */
+        .login-container {
+            max-width: 400px;
+            margin: 4em auto;
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 1.5em;
+            color: #1d1d1f;
+        }
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: 500;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box; /* Include padding in width */
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 14px; /* Slightly larger button */
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 1.5em;
+            font-size: 0.9em;
+        }
+        .signup-link a {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="/">FreshFarm Direct</a></h1>
+            <!-- Simple header for login page -->
+        </div>
+    </header>
+    <main>
+        <div class="login-container">
+            <h2>Customer Login</h2>
+            <form action="/login/customer" method="post"> <!-- Action/Method will be handled by backend -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="/signup/customer">Sign Up</a></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FreshFarm Direct. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

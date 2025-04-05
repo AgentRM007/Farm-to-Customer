@@ -1,0 +1,317 @@
+/* General Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Modern, clean font stack */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Cleaner white background */
+    color: #1d1d1f; /* Apple-like dark grey for text */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Smoother fonts */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 92%; /* Slightly wider */
+    max-width: 1180px; /* Adjusted max-width */
+    margin: 0 auto;
+    padding: 0 20px; /* More horizontal padding */
+}
+
+h1, h2, h3 {
+    color: #1d1d1f; /* Consistent dark text */
+    font-weight: 600; /* Slightly bolder headings */
+}
+
+a {
+    color: #e74c3c; /* Use primary accent color for links */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #c0392b; /* Darker shade on hover */
+    text-decoration: none; /* Remove underline on hover for cleaner look */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, .cta-button {
+    background-color: #e74c3c; /* Primary accent color (appetizing red/orange) */
+    color: white;
+    padding: 12px 24px; /* Slightly larger padding */
+    border: none;
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, .cta-button:hover {
+    background-color: #c0392b; /* Darker shade on hover */
+    transform: scale(1.03); /* Slight scale effect on hover */
+}
+
+button:active, .cta-button:active {
+    transform: scale(0.98); /* Press effect */
+}
+
+/* Header */
+header {
+    background-color: #ffffff; /* Solid white header */
+    padding: 0.8em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .header-flex { /* Use the class added in HTML */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin: 0;
+    color: #e74c3c; /* Zomato-like red */
+    font-weight: 700;
+    font-size: 1.8em;
+}
+header .logo h1 a { /* Ensure logo link inherits color */
+    color: inherit;
+    text-decoration: none;
+}
+
+
+header .search-bar {
+    flex-grow: 1; /* Allow search bar to take up space */
+    margin: 0 2em; /* Add margin around search bar */
+    max-width: 500px; /* Limit max width */
+}
+
+header .search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0; /* Lighter border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+header .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+header .main-nav ul li {
+    margin-left: 1.5em; /* Adjust spacing */
+}
+
+header .main-nav ul li a {
+    color: #555; /* Slightly lighter nav links */
+    font-weight: 500;
+    font-size: 0.95em;
+    padding: 8px 0; /* Vertical padding only */
+    border-radius: 0; /* Remove radius */
+    transition: color 0.2s ease;
+    position: relative; /* For potential underline effect */
+}
+
+header .main-nav ul li a:hover {
+    color: #e74c3c; /* Accent color on hover */
+    background-color: transparent; /* No background on hover */
+    text-decoration: none;
+}
+
+/* Optional: Add underline effect on hover like Zomato */
+header .main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #e74c3c;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+header .main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#hero {
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 6em 0; /* More vertical padding */
+    background-color: rgba(40, 40, 40, 0.6); /* Slightly adjusted overlay */
+    background-blend-mode: multiply;
+}
+
+#hero h2 {
+    font-size: 3em; /* Larger hero heading */
+    margin-bottom: 0.5em;
+    color: white;
+    font-weight: 700;
+}
+
+#hero p {
+    font-size: 1.3em; /* Larger hero text */
+    margin-bottom: 2em; /* More space before button */
+    max-width: 600px; /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 35px; /* Larger CTA button */
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* Products Section */
+#products {
+    padding: 4em 0; /* More padding */
+    background-color: #f5f5f7; /* Apple-like light grey section background */
+}
+
+#products h2 {
+    text-align: center;
+    font-size: 2.2em; /* Larger section title */
+    margin-bottom: 2em; /* More space below title */
+    font-weight: 600;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider cards */
+    gap: 2.5em; /* More gap */
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 12px; /* More rounded cards */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); /* Softer, diffused shadow */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px); /* Lift more on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Enhanced hover shadow */
+}
+
+.product-card img {
+    height: 220px; /* Taller images */
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.8em; /* More padding inside card */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    margin-top: 0;
+    margin-bottom: 0.6em; /* Adjusted margin */
+    font-size: 1.25em; /* Slightly larger product title */
+    font-weight: 600;
+}
+
+.product-info p {
+    margin-bottom: 1.2em; /* More space */
+    color: #555;
+    flex-grow: 1;
+    font-size: 0.95em;
+}
+
+.product-info .price {
+    font-weight: 700;
+    color: #1d1d1f; /* Darker price for contrast */
+    margin-bottom: 1.2em; /* More space */
+    font-size: 1.15em;
+}
+
+.product-info button {
+    align-self: flex-start;
+    background-color: #2ecc71; /* Keep green for Add to Cart */
+    padding: 10px 18px;
+    border-radius: 6px; /* Match other button radius */
+}
+
+.product-info button:hover {
+     background-color: #27ae60;
+     transform: scale(1.03); /* Add hover scale */
+}
+
+.product-info button:active {
+    transform: scale(0.98); /* Add active scale */
+}
+
+/* About Section */
+#about {
+    background-color: #ffffff; /* White background */
+    padding: 4em 0; /* More padding */
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2.2em; /* Larger title */
+    margin-bottom: 1.2em; /* More space */
+    font-weight: 600;
+}
+
+#about p {
+    max-width: 750px; /* Slightly adjusted width */
+    margin: 0 auto;
+    text-align: center;
+    color: #333; /* Darker text */
+    font-size: 1.1em; /* Slightly larger text */
+}
+
+/* Contact Section */
+#contact {
+    padding: 4em 0; /* More padding */
+    text-align: center;
+    background-color: #f5f5f7; /* Light grey background */
+}
+
+#contact h2 {
+    font-size: 2.2em; /* Larger title */
+    margin-bottom: 1.2em; /* More space */
+    font-weight: 600;
+}
+
+#contact p {
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: #f5f5f7;
+    color: #555;
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95em; /* Slightly larger footer text */
+}
